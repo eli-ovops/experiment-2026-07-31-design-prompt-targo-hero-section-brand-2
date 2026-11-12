@@ -1,0 +1,99 @@
+# Project instance derived from the canonical website-delivery-sop template.
+# No secret values, credentials, or business data belong in this file.
+schema_version: "1.0"
+status: "draft"
+site_id: "targo-logistics-hero"
+project: "Targo Hero Section"
+confirmed_by: "user brief"
+confirmed_at: "2026-07-31"
+no_secret_values: true
+
+server:
+  reference: "OpenAI Sites managed hosting"
+  owner: "OpenAI Sites"
+
+environments:
+  preview:
+    enabled: true
+    public_url: "managed by OpenAI Sites"
+    admin_path: null
+  production:
+    enabled: true
+    public_url: "assigned by OpenAI Sites"
+    admin_path: null
+
+repository:
+  repo_url: "OpenAI Sites managed source repository"
+  approved_branch: "main"
+  production_branch: "main"
+  commit_sha_required: true
+
+architecture: "next"
+
+toolchain:
+  node: ">=22.13.0"
+  pnpm_major: null
+  package_manager: "npm@10.9.2"
+  lockfile: "package-lock.json"
+  payload_version: null
+
+runtime:
+  app_port_reference: "managed by OpenAI Sites"
+  health_port_reference: "managed by OpenAI Sites"
+
+deployment:
+  call_carrier: "console"
+  forced_command_reference: null
+  allowed_modes:
+    - "OpenAI Sites saved-version deployment"
+  guide_reference: "Sites plugin hosting contract"
+  production_approval_required: false
+  authorization_reference: "current user request with Sites plugin"
+  deploy_owner: "Codex Sites workflow"
+  validate_required: true
+  status_required: true
+
+storage:
+  code_reference: "OpenAI Sites source repository"
+  releases_reference: "OpenAI Sites saved versions"
+  database_reference: null
+  media_reference: "static public assets"
+
+database:
+  type: "other"
+  credential_secret_ref: null
+  business_data_in_file: false
+
+media:
+  credential_secret_ref: null
+  managed_separately_from_code: true
+
+roles:
+  owner: "user"
+  developer: "Codex"
+  server_owner: "OpenAI Sites"
+
+migration:
+  required: false
+  required_for_localization: true
+  procedure_reference: null
+  production_approval_required: true
+
+backup:
+  procedure_reference: "OpenAI Sites saved-version history"
+  database_and_media_separate: true
+  restore_rehearsal_required: false
+
+release_retention:
+  policy_reference: "OpenAI Sites managed version history"
+  previous_accepted_release_required: false
+
+health_checks:
+  public_page: "/"
+  application: "OpenAI Sites deployment status"
+  admin: null
+  api: null
+
+rollback:
+  procedure_reference: "deploy a prior saved Sites version"
+  explicit_authorization_required: true
